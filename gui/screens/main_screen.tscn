@@ -112,7 +112,7 @@ margin_right = 430.0
 margin_bottom = 40.0
 text = "A game by Erick Quijivix [@Quijipixe]l
 All content was crafted by me but:
-Nightmare font by @Castpixel 
+Nightmare font by Eeve, follow at @somepx 
 Sounds designed using GDC's Audio Bundle
 "
 
@@ -137,7 +137,7 @@ __meta__ = {
 }
 
 [node name="start" parent="menu/vbox" instance=ExtResource( 4 )]
-margin_right = 92.0
+margin_right = 89.0
 margin_bottom = 15.0
 text = "start game"
 
@@ -150,6 +150,6 @@ text = "how to play"
 
 [node name="quit" parent="menu/vbox" instance=ExtResource( 4 )]
 margin_top = 19.0
-margin_right = 92.0
+margin_right = 89.0
 margin_bottom = 34.0
 text = "quit"
