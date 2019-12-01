@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://lib/behaviour_tree/RepatTilSucceed.gd" type="Script" id=1]
+
+
+
+[node name="RepatTilSucceed" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+

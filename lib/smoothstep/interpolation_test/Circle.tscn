@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://lib/smoothstep/interpolation_test/Circle.gd" type="Script" id=1]
+
+
+[node name="Circle" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+radius = 100
+base_color = Color( 1, 1, 1, 1 )
+border_color = Color( 1, 1, 1, 1 )
+border_size = 0
+
+

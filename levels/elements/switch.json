@@ -1,0 +1,83 @@
+{ "frames": {
+   "switch 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 10, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 10, "h": 64 },
+    "sourceSize": { "w": 10, "h": 64 },
+    "duration": 100
+   },
+   "switch 1.aseprite": {
+    "frame": { "x": 10, "y": 0, "w": 10, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 10, "h": 64 },
+    "sourceSize": { "w": 10, "h": 64 },
+    "duration": 100
+   },
+   "switch 2.aseprite": {
+    "frame": { "x": 20, "y": 0, "w": 10, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 10, "h": 64 },
+    "sourceSize": { "w": 10, "h": 64 },
+    "duration": 100
+   },
+   "switch 3.aseprite": {
+    "frame": { "x": 30, "y": 0, "w": 10, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 10, "h": 64 },
+    "sourceSize": { "w": 10, "h": 64 },
+    "duration": 100
+   },
+   "switch 4.aseprite": {
+    "frame": { "x": 40, "y": 0, "w": 10, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 10, "h": 64 },
+    "sourceSize": { "w": 10, "h": 64 },
+    "duration": 100
+   },
+   "switch 5.aseprite": {
+    "frame": { "x": 50, "y": 0, "w": 10, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 10, "h": 64 },
+    "sourceSize": { "w": 10, "h": 64 },
+    "duration": 100
+   },
+   "switch 6.aseprite": {
+    "frame": { "x": 60, "y": 0, "w": 10, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 10, "h": 64 },
+    "sourceSize": { "w": 10, "h": 64 },
+    "duration": 100
+   },
+   "switch 7.aseprite": {
+    "frame": { "x": 70, "y": 0, "w": 10, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 10, "h": 64 },
+    "sourceSize": { "w": 10, "h": 64 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.12.1",
+  "image": "switch.png",
+  "format": "RGBA8888",
+  "size": { "w": 80, "h": 64 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "PullSwitch", "from": 0, "to": 7, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

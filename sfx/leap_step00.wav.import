@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/leap_step00.wav-6a1432ffd157fc8fc56480094f1a4617.sample"
+
+[deps]
+
+source_file="res://sfx/leap_step00.wav"
+dest_files=[ "res://.import/leap_step00.wav-6a1432ffd157fc8fc56480094f1a4617.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

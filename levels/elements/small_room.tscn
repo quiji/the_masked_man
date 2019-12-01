@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="small_room" type="Area2D"]
+monitorable = false
+collision_layer = 16
+collision_mask = 16
+audio_bus_override = true
+audio_bus_name = "SmallRoom"

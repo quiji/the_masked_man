@@ -1,0 +1,182 @@
+{ "frames": {
+   "archer 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 1.aseprite": {
+    "frame": { "x": 29, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 2.aseprite": {
+    "frame": { "x": 58, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 3.aseprite": {
+    "frame": { "x": 87, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 4.aseprite": {
+    "frame": { "x": 116, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 5.aseprite": {
+    "frame": { "x": 145, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 6.aseprite": {
+    "frame": { "x": 174, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 7.aseprite": {
+    "frame": { "x": 203, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 8.aseprite": {
+    "frame": { "x": 232, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 9.aseprite": {
+    "frame": { "x": 261, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 10.aseprite": {
+    "frame": { "x": 290, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 11.aseprite": {
+    "frame": { "x": 319, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 12.aseprite": {
+    "frame": { "x": 348, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 13.aseprite": {
+    "frame": { "x": 377, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 14.aseprite": {
+    "frame": { "x": 406, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 15.aseprite": {
+    "frame": { "x": 435, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 16.aseprite": {
+    "frame": { "x": 464, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 17.aseprite": {
+    "frame": { "x": 493, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 18.aseprite": {
+    "frame": { "x": 522, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   },
+   "archer 19.aseprite": {
+    "frame": { "x": 551, "y": 0, "w": 29, "h": 31 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 29, "h": 31 },
+    "sourceSize": { "w": 29, "h": 31 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.12.1",
+  "image": "archer.png",
+  "format": "RGBA8888",
+  "size": { "w": 580, "h": 31 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "Idle", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "Shoot", "from": 1, "to": 10, "direction": "forward" },
+   { "name": "Hit", "from": 11, "to": 13, "direction": "forward" },
+   { "name": "SwordDeath", "from": 14, "to": 19, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

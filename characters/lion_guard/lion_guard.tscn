@@ -1,0 +1,355 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://characters/lion_guard/lion_guard.png" type="Texture" id=1]
+[ext_resource path="res://characters/lion_guard/lion_guard.gd" type="Script" id=2]
+[ext_resource path="res://lib/states/states.gd" type="Script" id=3]
+[ext_resource path="res://characters/lion_guard/wait.gd" type="Script" id=4]
+[ext_resource path="res://characters/lion_guard/sword_idle.gd" type="Script" id=5]
+[ext_resource path="res://characters/lion_guard/guard.gd" type="Script" id=6]
+[ext_resource path="res://characters/lion_guard/attack.gd" type="Script" id=7]
+[ext_resource path="res://characters/lion_guard/hit.gd" type="Script" id=8]
+[ext_resource path="res://characters/common/shadow_cast.tscn" type="PackedScene" id=9]
+[ext_resource path="res://characters/lion_guard/sword_death.gd" type="Script" id=10]
+[ext_resource path="res://sfx/sword_hit.wav" type="AudioStream" id=11]
+[ext_resource path="res://sfx/sword_attack.wav" type="AudioStream" id=12]
+[ext_resource path="res://sfx/2nd_attack.wav" type="AudioStream" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 142, 36 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 6.0
+height = 12.0
+
+[sub_resource type="Animation" id=3]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("guard:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 26, 27, 28, 29, 30, 31 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("guard:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "2ndattack" ],
+"method": "sfx"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("guard:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 35, 36, 37 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("guard:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("guard:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 20, 21, 22, 23, 24, 25 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("guard:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "attack" ],
+"method": "sfx"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("guard:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("guard:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("guard:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 32, 33, 34 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("guard:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("guard:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("guard:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("guard:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 38, 39, 40, 41, 42, 43 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("guard:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("guard:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("guard:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="AudioStreamRandomPitch" id=11]
+audio_stream = ExtResource( 11 )
+
+[sub_resource type="AudioStreamRandomPitch" id=12]
+audio_stream = ExtResource( 12 )
+
+[sub_resource type="AudioStreamRandomPitch" id=13]
+audio_stream = ExtResource( 13 )
+
+[node name="lion_guard" type="KinematicBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource( 2 )
+
+[node name="guard_vision" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 2
+collision_mask = 0
+
+[node name="collision" type="CollisionShape2D" parent="guard_vision"]
+position = Vector2( 1, -36 )
+shape = SubResource( 1 )
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2( 1, -12 )
+shape = SubResource( 2 )
+
+[node name="shadow_cast" parent="." instance=ExtResource( 9 )]
+
+[node name="guard" type="Sprite" parent="."]
+position = Vector2( 1, -16 )
+texture = ExtResource( 1 )
+hframes = 44
+frame = 23
+region_enabled = true
+region_rect = Rect2( 0, 0, 1496, 32 )
+script = ExtResource( 6 )
+__meta__ = {
+"anim_player_name": "anims",
+"framesize_x": 34.0,
+"framesize_y": 32.0
+}
+
+[node name="anims" type="AnimationPlayer" parent="."]
+anims/2ndAttack = SubResource( 3 )
+anims/2ndHit = SubResource( 4 )
+anims/Attack = SubResource( 5 )
+anims/DrawSword = SubResource( 6 )
+anims/Hit = SubResource( 7 )
+anims/Idle = SubResource( 8 )
+anims/SwordDeath = SubResource( 9 )
+anims/SwordIdle = SubResource( 10 )
+
+[node name="states" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="wait" type="Node" parent="states"]
+script = ExtResource( 4 )
+
+[node name="sword_idle" type="Node" parent="states"]
+script = ExtResource( 5 )
+
+[node name="attack" type="Node" parent="states"]
+script = ExtResource( 7 )
+
+[node name="hit" type="Node" parent="states"]
+script = ExtResource( 8 )
+
+[node name="sword_death" type="Node" parent="states"]
+script = ExtResource( 10 )
+
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="sword_hit" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource( 11 )
+bus = "Sfx"
+area_mask = 16
+
+[node name="attack" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource( 12 )
+bus = "Sfx"
+area_mask = 16
+
+[node name="2nd_attack" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource( 13 )
+bus = "Sfx"
+area_mask = 16

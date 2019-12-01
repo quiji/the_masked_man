@@ -1,0 +1,220 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://characters/archer/archer.png" type="Texture" id=1]
+[ext_resource path="res://characters/archer/fella.gd" type="Script" id=2]
+[ext_resource path="res://lib/states/states.gd" type="Script" id=3]
+[ext_resource path="res://characters/common/shadow_cast.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/archer/idle.gd" type="Script" id=5]
+[ext_resource path="res://characters/archer/archer.gd" type="Script" id=6]
+[ext_resource path="res://sfx/sword_hit.wav" type="AudioStream" id=7]
+[ext_resource path="res://characters/archer/shoot.gd" type="Script" id=8]
+[ext_resource path="res://characters/archer/sword_death.gd" type="Script" id=9]
+[ext_resource path="res://characters/archer/hit.gd" type="Script" id=10]
+[ext_resource path="res://characters/archer/wait.gd" type="Script" id=11]
+[ext_resource path="res://characters/archer/arrow.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 247, 56 )
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 8.0
+height = 8.0
+
+[sub_resource type="Animation" id=8]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 11, 12, 13 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_arrow"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 14, 15, 16, 17, 18, 19 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="AudioStreamRandomPitch" id=7]
+audio_stream = ExtResource( 7 )
+
+[node name="archer" type="KinematicBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource( 6 )
+
+[node name="guard_vision" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guard_vision"]
+position = Vector2( -2, -56 )
+shape = SubResource( 5 )
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -11 )
+shape = SubResource( 6 )
+
+[node name="shadow_cast" parent="." instance=ExtResource( 4 )]
+
+[node name="fella" type="Sprite" parent="."]
+position = Vector2( 0, -15 )
+texture = ExtResource( 1 )
+hframes = 20
+frame = 8
+region_enabled = true
+region_rect = Rect2( 0, 0, 580, 31 )
+script = ExtResource( 2 )
+__meta__ = {
+"anim_player_name": "anims",
+"framesize_x": 29.0,
+"framesize_y": 31.0
+}
+
+[node name="anims" type="AnimationPlayer" parent="."]
+anims/Hit = SubResource( 8 )
+anims/Idle = SubResource( 2 )
+anims/Shoot = SubResource( 3 )
+anims/SwordDeath = SubResource( 4 )
+
+[node name="states" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="wait" type="Node" parent="states"]
+script = ExtResource( 11 )
+
+[node name="idle" type="Node" parent="states"]
+script = ExtResource( 5 )
+
+[node name="shoot" type="Node" parent="states"]
+script = ExtResource( 8 )
+
+[node name="hit" type="Node" parent="states"]
+script = ExtResource( 10 )
+
+[node name="sword_death" type="Node" parent="states"]
+script = ExtResource( 9 )
+
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="sword_hit" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource( 7 )
+bus = "Sfx"
+area_mask = 16
+
+[node name="arrow" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[node name="left" type="Position2D" parent="."]
+position = Vector2( -11, -16 )
+
+[node name="right" type="Position2D" parent="."]
+position = Vector2( 11, -16 )

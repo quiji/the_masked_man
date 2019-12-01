@@ -1,0 +1,96 @@
+{ "frames": {
+   "checkpoint 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 84, "h": 49 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 84, "h": 49 },
+    "sourceSize": { "w": 84, "h": 49 },
+    "duration": 100
+   },
+   "checkpoint 1.aseprite": {
+    "frame": { "x": 84, "y": 0, "w": 84, "h": 49 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 84, "h": 49 },
+    "sourceSize": { "w": 84, "h": 49 },
+    "duration": 100
+   },
+   "checkpoint 2.aseprite": {
+    "frame": { "x": 168, "y": 0, "w": 84, "h": 49 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 84, "h": 49 },
+    "sourceSize": { "w": 84, "h": 49 },
+    "duration": 100
+   },
+   "checkpoint 3.aseprite": {
+    "frame": { "x": 252, "y": 0, "w": 84, "h": 49 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 84, "h": 49 },
+    "sourceSize": { "w": 84, "h": 49 },
+    "duration": 100
+   },
+   "checkpoint 4.aseprite": {
+    "frame": { "x": 336, "y": 0, "w": 84, "h": 49 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 84, "h": 49 },
+    "sourceSize": { "w": 84, "h": 49 },
+    "duration": 100
+   },
+   "checkpoint 5.aseprite": {
+    "frame": { "x": 420, "y": 0, "w": 84, "h": 49 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 84, "h": 49 },
+    "sourceSize": { "w": 84, "h": 49 },
+    "duration": 100
+   },
+   "checkpoint 6.aseprite": {
+    "frame": { "x": 504, "y": 0, "w": 84, "h": 49 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 84, "h": 49 },
+    "sourceSize": { "w": 84, "h": 49 },
+    "duration": 100
+   },
+   "checkpoint 7.aseprite": {
+    "frame": { "x": 588, "y": 0, "w": 84, "h": 49 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 84, "h": 49 },
+    "sourceSize": { "w": 84, "h": 49 },
+    "duration": 100
+   },
+   "checkpoint 8.aseprite": {
+    "frame": { "x": 672, "y": 0, "w": 84, "h": 49 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 84, "h": 49 },
+    "sourceSize": { "w": 84, "h": 49 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.12.1",
+  "image": "checkpoint.png",
+  "format": "RGBA8888",
+  "size": { "w": 756, "h": 49 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "Water", "from": 0, "to": 8, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },
+   { "name": "waves", "opacity": 255, "blendMode": "normal" },
+   { "name": "waterfall", "opacity": 255, "blendMode": "normal" },
+   { "name": "particles", "opacity": 255, "blendMode": "normal" },
+   { "name": "bright", "opacity": 255, "blendMode": "normal" },
+   { "name": "foam", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

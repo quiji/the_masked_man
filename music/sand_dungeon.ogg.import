@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sand_dungeon.ogg-9bd7aecbe001ac3d0392a6a7a2cd3911.oggstr"
+
+[deps]
+
+source_file="res://music/sand_dungeon.ogg"
+dest_files=[ "res://.import/sand_dungeon.ogg-9bd7aecbe001ac3d0392a6a7a2cd3911.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=85.5

@@ -1,0 +1,519 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://characters/black_mask/black_mask.png" type="Texture" id=1]
+[ext_resource path="res://characters/black_mask/black_mask.gd" type="Script" id=2]
+[ext_resource path="res://characters/black_mask/fella.gd" type="Script" id=3]
+[ext_resource path="res://lib/states/states.gd" type="Script" id=4]
+[ext_resource path="res://characters/black_mask/wait.gd" type="Script" id=5]
+[ext_resource path="res://characters/black_mask/idle.gd" type="Script" id=6]
+[ext_resource path="res://characters/black_mask/pierce_leap.gd" type="Script" id=7]
+[ext_resource path="res://characters/black_mask/hit.gd" type="Script" id=8]
+[ext_resource path="res://characters/black_mask/jump_to_wall.gd" type="Script" id=9]
+[ext_resource path="res://characters/black_mask/wall_jump_land.gd" type="Script" id=10]
+[ext_resource path="res://characters/black_mask/wall_jump.gd" type="Script" id=11]
+[ext_resource path="res://sfx/sword_hit.wav" type="AudioStream" id=12]
+[ext_resource path="res://characters/black_mask/sword_death.gd" type="Script" id=13]
+[ext_resource path="res://characters/common/attack_range.tscn" type="PackedScene" id=14]
+[ext_resource path="res://characters/black_mask/swipe.gd" type="Script" id=15]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 2.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 44.0
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 3.0
+height = 12.0
+
+[sub_resource type="Animation" id=4]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 17, 18 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 16 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 40 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 31, 32, 33, 34, 35, 36 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 37, 38, 39 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 29, 30 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 57, 58, 59, 60, 61, 62, 63, 64 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 1.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 41 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 42, 43, 44, 45, 46, 47, 48, 49 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("fella:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 50, 51, 52, 53, 54, 55, 56 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fella:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=18]
+radius = 7.0
+height = 14.0
+
+[sub_resource type="AudioStreamRandomPitch" id=19]
+audio_stream = ExtResource( 12 )
+
+[node name="black_mask" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource( 2 )
+
+[node name="pierce_range" parent="." instance=ExtResource( 14 )]
+position = Vector2( -21, -10 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pierce_range"]
+position = Vector2( -12, 0 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="swipe_range" parent="." instance=ExtResource( 14 )]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="swipe_range"]
+position = Vector2( -1, -12 )
+shape = SubResource( 2 )
+
+[node name="lancer_range" parent="." instance=ExtResource( 14 )]
+position = Vector2( 7, -7 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lancer_range"]
+shape = SubResource( 3 )
+
+[node name="fella" type="Sprite" parent="."]
+position = Vector2( 0, -31 )
+texture = ExtResource( 1 )
+hframes = 65
+frame = 32
+region_enabled = true
+region_rect = Rect2( 0, 0, 5850, 64 )
+script = ExtResource( 3 )
+__meta__ = {
+"anim_player_name": "anims",
+"framesize_x": 90.0,
+"framesize_y": 64.0
+}
+
+[node name="anims" type="AnimationPlayer" parent="."]
+anims/Helper = SubResource( 4 )
+anims/Hit = SubResource( 5 )
+anims/Idle = SubResource( 6 )
+anims/JumpToWall = SubResource( 7 )
+anims/Leap = SubResource( 8 )
+anims/LeapStop = SubResource( 9 )
+anims/StartLeap = SubResource( 10 )
+anims/Swipe = SubResource( 11 )
+anims/SwordDeath = SubResource( 12 )
+anims/Wait = SubResource( 13 )
+anims/WaitToIdle = SubResource( 14 )
+anims/WallHold = SubResource( 15 )
+anims/WallJump = SubResource( 16 )
+anims/WallJumpLand = SubResource( 17 )
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -14 )
+shape = SubResource( 18 )
+
+[node name="states" type="Node" parent="."]
+script = ExtResource( 4 )
+visual_log = true
+
+[node name="wait" type="Node" parent="states"]
+script = ExtResource( 5 )
+
+[node name="idle" type="Node" parent="states"]
+script = ExtResource( 6 )
+
+[node name="pierce_leap" type="Node" parent="states"]
+script = ExtResource( 7 )
+
+[node name="jump_to_wall" type="Node" parent="states"]
+script = ExtResource( 9 )
+
+[node name="wall_jump" type="Node" parent="states"]
+script = ExtResource( 11 )
+
+[node name="wall_jump_land" type="Node" parent="states"]
+script = ExtResource( 10 )
+
+[node name="swipe" type="Node" parent="states"]
+script = ExtResource( 15 )
+
+[node name="sword_death" type="Node" parent="states"]
+script = ExtResource( 13 )
+
+[node name="hit" type="Node" parent="states"]
+script = ExtResource( 8 )
+
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="sword_hit" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource( 19 )
+bus = "Music"
+area_mask = 16

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://levels/music_queue.gd" type="Script" id=1]
+
+[node name="music_queue" type="Area2D"]
+monitorable = false
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 1 )

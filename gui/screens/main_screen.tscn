@@ -1,0 +1,155 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://gui/fonts/Nightmare.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://music/main_scren.ogg" type="AudioStream" id=2]
+[ext_resource path="res://gui/screens/main_screen.gd" type="Script" id=3]
+[ext_resource path="res://gui/elements/button.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "TextIntro"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label2:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.277392, 1 ),
+"update": 0,
+"values": [ Vector2( 161, -100 ), Vector2( 161, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+outline_size = 2
+outline_color = Color( 0.0156863, 0.12549, 0.203922, 1 )
+font_data = ExtResource( 1 )
+
+[node name="main_screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+bus = "Music"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0509804, 0, 0.141176, 1 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -224.5
+margin_top = -16.5
+margin_right = 224.5
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.588235, 0.686275, 0.752941, 1 )
+text = "\"Those who put on one of the masks shall wear it until their last breath...\" "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "open"
+anims/TextIntro = SubResource( 2 )
+anims/open = SubResource( 3 )
+
+[node name="tween" type="Tween" parent="."]
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -159.0
+margin_right = 159.0
+margin_bottom = 147.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.298039, 0.682353, 0.564706, 1 )
+text = "The Masked Man"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -77.0
+margin_right = 430.0
+margin_bottom = 40.0
+text = "A game by Erick Quijivix [@Quijipixe]l
+All content was crafted by me but:
+Nightmare font by @Castpixel 
+Sounds designed using GDC's Audio Bundle
+"
+
+[node name="menu" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -42.0
+margin_top = -27.0
+margin_right = 42.0
+margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="menu"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start" parent="menu/vbox" instance=ExtResource( 4 )]
+margin_right = 92.0
+margin_bottom = 15.0
+text = "start game"
+
+[node name="tutorial" parent="menu/vbox" instance=ExtResource( 4 )]
+visible = false
+margin_top = 19.0
+margin_right = 92.0
+margin_bottom = 34.0
+text = "how to play"
+
+[node name="quit" parent="menu/vbox" instance=ExtResource( 4 )]
+margin_top = 19.0
+margin_right = 92.0
+margin_bottom = 34.0
+text = "quit"
