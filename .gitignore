@@ -1,6 +1,11 @@
 
 # Godot-specific ignores
 .import/
+assets/
+addons/
+exports/
+gui/fonts/Nightmare.ttf
+
 export.cfg
 export_presets.cfg
 
